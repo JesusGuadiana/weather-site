@@ -2,7 +2,6 @@ const weatherForm = document.querySelector("form");
 const errorHtml = document.querySelector("#error");
 const successHtml = document.querySelector("#success");
 
-
 weatherForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const location = document.querySelector("input").value;
@@ -10,7 +9,7 @@ weatherForm.addEventListener("submit", (e) => {
     successHtml.textContent = "Loading...";
     errorHtml.textContent = "";
 
-    fetch("http://localhost:3000/weather?address=" + location).then((response) => {
+    fetch("/weather?address=" + location).then((response) => {
     response.json().then((data) => {
         if(!data.error){
             errorHtml.textContent = data.location;
