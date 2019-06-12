@@ -9,7 +9,6 @@ const forecast = (lat, long, callback) =>{
         } else if(body.error){
             console.log("Unable to find location");
         } else {
-            console.log(body.daily.data[0])
         const temp = body.currently.temperature;
         const rain = body.currently.precipProbability;
         const forecast = body.daily.data[0].summary + "Its currently " + temp + "° out. There is " + rain + "% chances of rain, the lowest temperature expected is " + body.daily.data[0].temperatureLow + "° and the highest expected temperature is " + body.daily.data[0].temperatureHigh + "°";
